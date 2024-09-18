@@ -55,8 +55,9 @@ Simply configure within your environment file, e.g.,
 ```ruby
 # development.rb
 config.after_initialize do
-  PrettySql.enable!
-  PrettySql.sql_output_colour = :cyan
+  PrettySql.enable!                     # false by default  
+  PrettySql.sql_output_colour = :cyan   # blue by default
+  PrettySql.auto_explain_enabled = true # false by default
 end
 ```
 
