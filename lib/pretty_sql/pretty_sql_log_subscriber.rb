@@ -20,7 +20,7 @@ class PrettySqlLogSubscriber < ActiveRecord::LogSubscriber
 
     # info "#{name}  \n\e[1m\e[34m#{format!(payload)}\e[0m"
     info "#{name}  \n#{@sql_formatter.colorize}"
-    explain_analyse!
+    explain_analyse! if PrettySql.auto_explain_enabled?
   end
 
   def format_sql!(payload)

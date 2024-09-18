@@ -2,7 +2,12 @@
 
 This gem is not yet released and is currently a work in progress. Not intended for production use.
 
-Example output:
+The goal is to empower developers to better diagnose performance issues in their queries by:
+- make the SQL output more readable (the Rails default isn't easy to read quickly)
+- provide Developer friendly analyse explain output (wip, currently it just outputs the raw response from `EXPLAIN ANALYZE`)
+
+
+**Example output:**
 
 ```
 User.joins(:account_users).where.not(first_name: nil).where(first_name: ["Foo", "Bar", "Baz"]).where(onboarded: [false, nil]).limit(20).first
